@@ -25,6 +25,8 @@
                        NOTNULL="true" SEQUENCE="false" />
                 <FIELD NAME="url" TYPE="text"
                        NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="hostname" TYPE="char" LENGTH="255"
+                       NOTNULL="true" SEQUENCE="false" />
 
                 <!-- Memory -->
                 <FIELD NAME="memory" TYPE="int" LENGTH="10"

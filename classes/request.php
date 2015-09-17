@@ -77,6 +77,7 @@ class request {
             'threadid' => ZEND_THREAD_SAFE ? zend_thread_id() : null,
             'uid'      => getmyuid(),
             'url'      => $this->url->out_as_local_url(false),
+            'hostname' => gethostname(),
 
             'memory'     => memory_get_usage(),
             'peakmemory' => memory_get_peak_usage(),
