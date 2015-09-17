@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<XMLDB PATH="local/telemetry/db" VERSION="2015091600" COMMENT="XMLDB file for local_telemetry"
+<XMLDB PATH="local/telemetry/db" VERSION="20150916" COMMENT="XMLDB file for local_telemetry"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
     <!--
@@ -42,6 +42,123 @@
             </FIELDS>
             <KEYS>
                 <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+            </KEYS>
+        </TABLE>
+
+        <TABLE NAME="telemetry_wincache" COMMENT="WinCache state.">
+            <FIELDS>
+                <!-- Primary key -->
+                <FIELD NAME="id" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="true" />
+
+                <!-- Identifiers -->
+                <FIELD NAME="requestid" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+
+                <!-- File cache -->
+                <FIELD NAME="f_f_uptime" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="f_f_items" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="f_f_hits" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="f_f_misses" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="f_m_total" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="f_m_free" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="f_m_used_blocks" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="f_m_free_blocks" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="f_m_overhead" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+
+                <!-- Opcode cache -->
+                <FIELD NAME="o_f_uptime" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="o_f_items" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="o_f_hits" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="o_f_misses" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="o_f_islocal" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="o_m_total" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="o_m_free" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="o_m_used_blocks" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="o_m_free_blocks" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="o_m_overhead" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+
+                <!-- Resolved path list cache -->
+                <FIELD NAME="rp_f_files" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="rp_m_total" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="rp_m_free" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="rp_m_used_blocks" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="rp_m_free_blocks" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="rp_m_overhead" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+
+                <!-- Session cache -->
+                <FIELD NAME="s_i_uptime" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="s_i_items" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="s_i_islocal" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="s_i_hits" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="s_i_misses" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="s_m_total" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="s_m_free" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="s_m_used_blocks" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="s_m_free_blocks" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="s_m_overhead" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+
+                <!-- User cache -->
+                <FIELD NAME="u_i_uptime" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="u_i_items" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="u_i_islocal" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="u_i_hits" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="u_i_misses" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="u_m_total" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="u_m_free" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="u_m_used_blocks" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="u_m_free_blocks" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="u_m_overhead" TYPE="int" LENGTH="10"
+                       NOTNULL="true" SEQUENCE="false" />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+                <KEY NAME="fukrequestid" TYPE="foreign-unique" FIELDS="requestid"
+                     REFTABLE="telemetry_request" REFFIELDS="id" />
             </KEYS>
         </TABLE>
     </TABLES>

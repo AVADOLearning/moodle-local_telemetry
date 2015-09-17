@@ -26,6 +26,12 @@ if ($hassiteconfig) {
             new lang_string('enable_desc', $component),
             false
         ));
+
+        $page->add(new admin_setting_configcheckbox(
+            "{$component}/rs_wincache",
+            new lang_string('rs_wincache', $component),
+            new lang_string('rs_wincache_desc', $component),
+            false
+        ));
     }
 }
-

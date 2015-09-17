@@ -42,5 +42,8 @@ function local_telemetry_init() {
     $url = new moodle_url($ME);
     $request = new request($config, $DB, $url);
     core_shutdown_manager::register_function(array($request, 'commit'));
-}
 
+    if ($config->get('rs_wincache')) {
+        $request->add_state(new wincache_request_state());
+    }
+}
